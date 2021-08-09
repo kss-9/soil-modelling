@@ -14,9 +14,13 @@ source(file.path(working_dir, "estimate_carbon_input.R"))
 
 project_name <- "dobimar"
 
+if(!dir.exists(file.path("results"))){dir.create(file.path("results"))}
+if(!dir.exists(file.path("plots"))){dir.create(file.path("plots"))}
+
 if(!dir.exists(file.path("results", project_name))){dir.create(file.path("results", project_name))}
 if(!dir.exists(file.path("plots", project_name))){dir.create(file.path("plots", project_name))}
 
+# REQUIRES DATA SET
 field_parameters <- read_csv(file.path(working_dir, "parameter_files", paste0(project_name,"_field_parameters.csv")),
                              col_types = "dcccdddddccllllllllllll")
 
